@@ -34,7 +34,7 @@ public class AzimuthCalculatorTest {
     }
 
     @Test
-    public void oneOfPointsOnNorthPole() {
+    public void oneOfPointsOnNorthPole1() {
         var firstPoint = new Point(90., 0.);
         var secondPoint = new Point(-50, -120);
 
@@ -45,9 +45,31 @@ public class AzimuthCalculatorTest {
     }
 
     @Test
-    public void oneOfPointsOnSouthPole() {
-        var firstPoint = new Point(55., 0.);
-        var secondPoint = new Point(-90, -120);
+    public void oneOfPointsOnNorthPole2() {
+        var firstPoint = new Point(40., -30.);
+        var secondPoint = new Point(90., 0);
+
+        Assertions.assertEquals(
+                180,
+                calculator.calculateAzimuth(firstPoint, secondPoint),
+                0.0001);
+    }
+
+    @Test
+    public void oneOfPointsOnSouthPole1() {
+        var firstPoint = new Point(55., 60.);
+        var secondPoint = new Point(-90, 0);
+
+        Assertions.assertEquals(
+                180,
+                calculator.calculateAzimuth(firstPoint, secondPoint),
+                0.0001);
+    }
+
+    @Test
+    public void oneOfPointsOnSouthPole2() {
+        var firstPoint = new Point(-90., 0.);
+        var secondPoint = new Point(-55, -120);
 
         Assertions.assertEquals(
                 180,

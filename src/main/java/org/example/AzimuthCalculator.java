@@ -11,6 +11,11 @@ public class AzimuthCalculator {
             return AzimuthAnswer.NONE.getAnswerCode();
         }
 
+        if(Math.abs(firstPoint.getLatitude()) == 90 ||
+        Math.abs(secondPoint.getLatitude()) == 90) {
+            return 180;
+        }
+
         return 0;
     }
 }
