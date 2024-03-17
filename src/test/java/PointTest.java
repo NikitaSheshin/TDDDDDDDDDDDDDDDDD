@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
-public class DistanceTest {
+public class PointTest {
     private static Stream<Arguments> incorrectData() {
         return Stream.of(
                 Arguments.of(-1000., -1000.),
