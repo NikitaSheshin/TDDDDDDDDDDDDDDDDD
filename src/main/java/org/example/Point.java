@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public class Point {
     private double latitude;
     private double longitude;
@@ -32,5 +34,18 @@ public class Point {
         }
 
         this.longitude = longitude;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return Double.compare(latitude, point.latitude) == 0 && Double.compare(longitude, point.longitude) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(latitude, longitude);
     }
 }

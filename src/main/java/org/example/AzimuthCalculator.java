@@ -7,6 +7,10 @@ public class AzimuthCalculator {
             return AzimuthAnswer.ANY.getAnswerCode();
         }
 
+        if(firstPoint.equals(secondPoint)) {
+            return AzimuthAnswer.NONE.getAnswerCode();
+        }
+
         return 0;
     }
 }
