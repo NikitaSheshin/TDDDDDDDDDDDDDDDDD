@@ -76,4 +76,15 @@ public class AzimuthCalculatorTest {
                 calculator.calculateAzimuth(firstPoint, secondPoint),
                 0.0001);
     }
+
+    @Test
+    public void checkTrueAzimuthCalculate() {
+        var firstPoint = new Point(5., 8.);
+        var secondPoint = new Point(-6, -7);
+
+        Assertions.assertEquals(
+                -2,
+                calculator.calculateAzimuth(firstPoint, secondPoint),
+                0.0001);
+    }
 }
