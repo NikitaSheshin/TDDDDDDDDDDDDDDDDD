@@ -15,11 +15,21 @@ public class AzimuthCalculatorTest {
     @Test
     public void ifLineIntersectEarthCenter() {
         var northPoint = new Point(50., 120.);
-        var southPoint = new Point(-50, 10);
+        var southPoint = new Point(-50, -120);
 
         Assertions.assertEquals(
-                0.,
+                -2,
                 calculator.calculateAzimuth(northPoint, southPoint),
+                0.0001);
+    }
+
+    @Test
+    public void equalsPointTest() {
+        var testPoint = new Point(50, 50);
+
+        Assertions.assertEquals(
+                -1,
+                calculator.calculateAzimuth(testPoint, testPoint),
                 0.0001);
     }
 }
