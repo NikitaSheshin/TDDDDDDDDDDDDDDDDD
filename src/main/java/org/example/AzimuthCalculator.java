@@ -16,6 +16,7 @@ public class AzimuthCalculator {
             return 180;
         }
 
-        return 0;
+        return firstPoint.getLatitude() * firstPoint.getLongitude() +
+                secondPoint.getLatitude() * secondPoint.getLongitude();
     }
 }
