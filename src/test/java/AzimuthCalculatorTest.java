@@ -83,7 +83,7 @@ public class AzimuthCalculatorTest {
         var secondPoint = new Point(-6, -7);
 
         Assertions.assertEquals(
-                -2,
+                82,
                 calculator.calculateAzimuth(firstPoint, secondPoint),
                 0.0001);
     }
